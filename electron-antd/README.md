@@ -48,7 +48,12 @@ npm run build
 
 Please check the `release` folder after the build is complete.
 
+## 本地数据存储 
 
+- lowdb
+https://blog.csdn.net/jbguo/article/details/90409198
+- electron-store
+https://github.com/sindresorhus/electron-store
 
 ## License
 [MIT](./LICENSE)

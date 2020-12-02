@@ -1,5 +1,5 @@
-import path from 'path'
 import { app } from 'electron'
+import path from 'path'
 
 /** 当前应用程序所在目录 */
 export const APP_PATH: string = app.getAppPath()
@@ -25,6 +25,7 @@ export const ASSETS_PATH: string =
  * @param pathStr
  */
 export function asAssetsPath(pathStr: string) {
+  console.log('process.env.NODE_ENV:', process.env.NODE_ENV)
   return path.join(ASSETS_PATH, pathStr)
 }
 

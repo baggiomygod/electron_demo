@@ -11,7 +11,7 @@ export const APP_VERSION = app.getVersion()
 export const APP_TITLE = 'electron-demo'
 
 /** 应用主图标 (桌面) */
-export const APP_ICON = asAssetsPath('app-icon/app-icon@256.png')
+export const APP_ICON = asAssetsPath('app-icon/app-icon.png')
 
 /** 亮色风格托盘图标 标准尺寸 16*16, 系统会自动载入 @2x 和 @3x */
 export const TRAY_ICON_LIGHT = asAssetsPath('tray-icon/tray-icon-light.png')

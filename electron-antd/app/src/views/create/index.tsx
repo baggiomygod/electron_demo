@@ -1,7 +1,7 @@
 import { withStore } from '@/src/components'
 import { Button, Card, Input, Spin } from 'antd'
 import * as React from 'react'
-
+import FileCard from './FileCard'
 
 interface DemoProps extends PageProps, StoreProps {
   count: StoreStates['count']
@@ -109,6 +109,8 @@ export default class Demo extends React.Component<DemoProps, DemoState> {
             <Input.TextArea value={JSON.stringify(resData)} autoSize />
           </Spin>
         </Card>
+
+        <FileCard />
       </div>
     )
   }

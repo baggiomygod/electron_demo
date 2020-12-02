@@ -5,7 +5,7 @@
   "buildVersion": "0001",
   "private": false,
   "main": "dist/main/main.js",
-  "author": "lanten",
+  "author": "wengfan",
   "scripts": {
     "ts:dev": "ts-node -P build/tsconfig.json build/tasks/dev-server.ts",
     "ts:build": "ts-node -P build/tsconfig.json build/tasks/build.ts",

@@ -1,7 +1,7 @@
-import path from 'path'
-import { BrowserWindow, BrowserWindowConstructorOptions } from 'electron'
-import { log } from '../log'
 import routes from '@/src/auto-routes'
+import { BrowserWindow, BrowserWindowConstructorOptions, Menu } from 'electron'
+import path from 'path'
+import { log } from '../log'
 
 const { NODE_ENV, port, host } = process.env
 
@@ -77,6 +77,24 @@ export function createWindow(key: RouterKey, options: CreateWindowOptions = {}):
     const url = getWindowUrl(key, options)
     windowList.set(key, win)
     win.loadURL(url)
+
+    // 创建自定义菜单
+    const appMenu = Menu.buildFromTemplate([
+      {
+        label: '开发工具',
+        submenu: [
+          {
+            label: '打开调试',
+            click(item, focusedWindow) {
+              if (focusedWindow)
+                // 打开调试工具
+                focusedWindow.webContents.openDevTools({ mode: 'right' })
+            },
+          },
+        ],
+      },
+    ])
+    Menu.setApplicationMenu(appMenu)
 
     if (createConfig.saveWindowBounds) {
       const lastBounds = $tools.settings.windowBounds.get(key)
