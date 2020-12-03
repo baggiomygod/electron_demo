@@ -1,7 +1,7 @@
 import fs from 'fs'
 import path from 'path'
-import { USER_DATA_PATH } from '../paths'
 import { log } from '../log'
+import { USER_DATA_PATH } from '../paths'
 
 export class CreateSettings<T extends AnyObj = AnyObj> {
   public filePath: string
@@ -28,14 +28,14 @@ export class CreateSettings<T extends AnyObj = AnyObj> {
     return false
   }
 
-  createSettingsFile() {
+  createSettingsFile(): void {
     fs.writeFileSync(this.filePath, '{}')
     log.info(`Create settings file <${this.name}> path: ${this.filePath}`)
   }
 
   get(): Partial<T>
   get<K extends keyof T>(key: K): T[K]
-  get(key?: keyof T) {
+  get(key?: keyof T): any {
     let config: Partial<T> = {}
     if (this.hasSettingsFile()) {
       const configStr = fs.readFileSync(this.filePath, 'utf-8')

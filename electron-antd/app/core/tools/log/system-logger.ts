@@ -1,7 +1,7 @@
-import path from 'path'
 import electronLog, { ElectronLog } from 'electron-log'
-import { formatDate } from '../utils'
+import path from 'path'
 import { LOGS_PATH } from '../paths'
+import { formatDate } from '../utils'
 
 /**
  * 创建一个 electron-log 记录器
@@ -30,27 +30,27 @@ export class SystemLogger {
     this.logger.transports.console.format = '[{level}] {text}'
   }
 
-  log(...params: any[]) {
+  log(...params: any[]): void {
     return this.logger.log(...params)
   }
 
-  info(...params: any[]) {
+  info(...params: any[]): void {
     return this.logger.info(...params)
   }
 
-  warn(...params: any[]) {
+  warn(...params: any[]): void {
     return this.logger.warn(...params)
   }
 
-  error(...params: any[]) {
+  error(...params: any[]): void {
     return this.logger.error(...params)
   }
 
-  debug(...params: any[]) {
+  debug(...params: any[]): void {
     return this.logger.debug(...params)
   }
 
-  verbose(...params: any[]) {
+  verbose(...params: any[]): void {
     return this.logger.verbose(...params)
   }
 }

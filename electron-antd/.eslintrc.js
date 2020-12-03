@@ -40,13 +40,26 @@ module.exports = {
   },
 
   rules: {
-    indent: ['error', 2, { SwitchCase: 1 }], // 强制使用两个空格作为缩进
-    quotes: ['error', 'single'], //强制使用单引号
-    semi: ['error', 'never'], //强制不使用分号结尾
-    'comma-dangle': ['error', 'always-multiline'], // 逗号结束
+    indent: [
+      'error',
+      2,
+      {
+        SwitchCase: 1,
+      },
+    ], // 强制使用两个空格作为缩进
+    quotes: ['error', 'single'], // 强制使用单引号
+    semi: ['error', 'never'], // 强制不使用分号结尾
+    'comma-spacing': [
+      2,
+      {
+        before: false,
+        after: true,
+      },
+    ],
+    'comma-style': [2, 'last'],
     'no-param-reassign': 'error', // 禁止对 function 的参数进行重新赋值
     'jsx-quotes': ['error', 'prefer-double'], // 强制所有 JSX 属性值使用双引号。
-    'prettier/prettier': { "error", { "endOfLine": "auto" } }, // prettier
+    'prettier/prettier': 'error', // prettier
     'prefer-rest-params': 0,
     'react/display-name': 0,
     'jsx-control-statements/jsx-use-if-tag': 0, // 强制在 jsx 中使用 if 判断
@@ -61,5 +74,6 @@ module.exports = {
     '@typescript-eslint/no-empty-function': 1,
     '@typescript-eslint/no-unused-vars': 1, // 导入内容未使用
     '@typescript-eslint/ban-ts-comment': 0, // 禁用 @ts-ignore 等注释
+    '@typescript-eslint/explicit-module-boundary-types': ['error'],
   },
 }

@@ -1,8 +1,7 @@
-import React from 'react'
 import { Tooltip } from 'antd'
-
-import AppSideMenus from './side-menus.json'
+import React from 'react'
 import './app-sidebar.less'
+import AppSideMenus from './side-menus.json'
 
 interface SideMenuItem {
   key: string
@@ -42,11 +41,6 @@ export class AppSidebar extends React.Component<unknown, State> {
   renderMenuItem = ({ key, icon, title, href }: SideMenuItem): JSX.Element => {
     const { activeMenuKey } = this.state
     const isActive = activeMenuKey === key
-    // const iconProps: IconProps = { type: icon, className: 'fs-24' }
-    // if (activeMenuKey === key) {
-    //   iconProps.theme = 'filled'
-    //   iconProps.style = { color: '#fff' }
-    // }
     return (
       <Tooltip key={key} overlayClassName="side-menu-item-tooltip" placement="right" title={title}>
         <a

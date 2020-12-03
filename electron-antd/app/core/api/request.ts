@@ -28,7 +28,11 @@ const DEFAULT_PARAMS = {}
  * @param params
  * @param optionsSource
  */
-export async function request(apiPath: string, params?: RequestParams, optionsSource?: RequestOptions) {
+export async function request(
+  apiPath: string,
+  params?: RequestParams,
+  optionsSource?: RequestOptions
+): Promise<void> {
   const options: RequestOptions = Object.assign({}, DEFAULT_CONFIG, optionsSource)
   const { method, protocol, host, baseUrl, headers, responseType, checkStatus, formData } = options
   const sendData: AxiosRequestConfig = {

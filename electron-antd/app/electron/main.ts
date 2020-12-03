@@ -1,6 +1,7 @@
 import { app, Tray } from 'electron'
-
 import { creatAppTray } from './tray'
+
+console.log(`此平台是: ${process.platform}`)
 
 $tools.log.info(`Application <${$tools.APP_NAME}> launched.`)
 

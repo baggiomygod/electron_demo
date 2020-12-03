@@ -1,4 +1,4 @@
-import { Notification, BrowserWindow } from 'electron'
+import { BrowserWindow, Notification } from 'electron'
 /**
  * 发生接口发生错误时的处理
  * 注意这是运行在主进程中的方法,请不要使用 document api
@@ -6,7 +6,14 @@ import { Notification, BrowserWindow } from 'electron'
  * @param sendData
  * @param options
  */
-export async function errorAction(err: any, sendData: any, options: RequestOptions) {
+interface IError {
+  code: any
+  message: string
+}
+interface ISendData {
+  [propName: string]: any
+}
+export async function errorAction(err: IError, sendData: ISendData, options: RequestOptions): Promise<void> {
   const { code, message } = err
   const { errorType } = options
 

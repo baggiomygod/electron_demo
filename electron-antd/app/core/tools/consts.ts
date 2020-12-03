@@ -19,6 +19,9 @@ export const TRAY_ICON_LIGHT = asAssetsPath('tray-icon/tray-icon-light.png')
 /** 暗色风格托盘图标 (仅 macOS) */
 export const TRAY_ICON_DARK = asAssetsPath('tray-icon/tray-icon-dark.png')
 
+/* DOC文件路径 */
+export const DOC_PATH = asAssetsPath('docs')
+
 /** 创建新窗口时默认加载的选项 */
 export const DEFAULT_WINDOW_OPTIONS: BrowserWindowConstructorOptions = {
   icon: APP_ICON,

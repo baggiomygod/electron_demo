@@ -1,8 +1,7 @@
 import path from 'path'
 import { Configuration } from 'webpack'
-
-import webpackConfigBase from './webpack.config.base'
 import devConfig from './dev.config'
+import webpackConfigBase from './webpack.config.base'
 
 const { dist, mainSource: appPath } = devConfig
 

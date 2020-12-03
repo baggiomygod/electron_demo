@@ -12,6 +12,8 @@
     "dev": "cross-env NODE_ENV=development BUILD_ENV=dev npm run ts:dev",
     "build:dev": "cross-env NODE_ENV=production BUILD_ENV=dev npm run ts:build",
     "build": "cross-env NODE_ENV=production BUILD_ENV=prod npm run ts:build",
+    "lint": "eslint --ext .tsx,.ts,.js,.vue app",
+    "lint-f": "eslint --ext .tsx,.ts,.js,.vue app --fix",
     "doc": "typedoc --options typedoc.js"
   },
   "devDependencies": {

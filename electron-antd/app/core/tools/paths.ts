@@ -24,7 +24,7 @@ export const ASSETS_PATH: string =
  * 转换资源路径
  * @param pathStr
  */
-export function asAssetsPath(pathStr: string) {
+export function asAssetsPath(pathStr: string): string {
   console.log('process.env.NODE_ENV:', process.env.NODE_ENV)
   return path.join(ASSETS_PATH, pathStr)
 }
@@ -33,6 +33,6 @@ export function asAssetsPath(pathStr: string) {
  * 转换绝对路径
  * @param pathStr
  */
-export function asAbsolutePath(pathStr: string) {
+export function asAbsolutePath(pathStr: string): string {
   return path.resolve(APP_PATH, pathStr)
 }

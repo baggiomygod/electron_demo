@@ -1,10 +1,15 @@
 [
-  
   {
     "key": "Create",
     "href": "#/new",
     "title": "新建",
     "icon": "home-3"
+  },
+  {
+    "key": "FilePage",
+    "href": "#/file",
+    "title": "文件操作",
+    "icon": "file"
   },
   {
     "key": "LogViewer",

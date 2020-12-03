@@ -1,23 +1,23 @@
-import { MenuItemConstructorOptions } from 'electron'
+import { BrowserWindow, MenuItemConstructorOptions } from 'electron'
 
 export const trayMenus: MenuItemConstructorOptions[] = [
-  { label: 'Home', click: () => $tools.createWindow('Home') },
+  { label: 'Home', click: (): Promise<BrowserWindow> => $tools.createWindow('Home') },
   {
     label: 'Page Params',
-    click: () =>
+    click: (): Promise<BrowserWindow> =>
       $tools.createWindow('PageParams', {
         params: { test: 'test-params' },
         query: { testObj: { aa: ['bb', 'cc'] } },
       }),
   },
-  { label: 'Create', click: () => $tools.createWindow('Create') },
+  { label: 'Create', click: (): Promise<BrowserWindow> => $tools.createWindow('Create') },
 
   {
     label: 'Help',
     submenu: [
-      { label: 'Log Viewer', click: () => $tools.createWindow('LogViewer') },
+      { label: 'Log Viewer', click: (): Promise<BrowserWindow> => $tools.createWindow('LogViewer') },
       { type: 'separator' },
-      { label: 'About', click: () => $tools.createWindow('About') },
+      { label: 'About', click: (): Promise<BrowserWindow> => $tools.createWindow('About') },
     ],
   },
 
