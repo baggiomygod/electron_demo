@@ -84,5 +84,12 @@
   "bugs": {
     "url": "https://github.com/lanten/electron-antd/issues"
   },
-  "homepage": "https://github.com/lanten/electron-antd#readme"
+  "homepage": "https://github.com/lanten/electron-antd#readme",
+  "dependencies": {
+    "docx-pdf": "^0.0.1",
+    "libreoffice-convert": "^1.3.2",
+    "officegen": "^0.6.4",
+    "pdf2json": "^1.2.0",
+    "textract": "^2.5.0"
+  }
 }

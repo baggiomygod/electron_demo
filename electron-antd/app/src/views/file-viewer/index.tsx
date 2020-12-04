@@ -1,8 +1,8 @@
-import { withStore } from '@/src/components'
-import { Spin } from 'antd'
+import { List, message, Spin } from 'antd'
 import * as React from 'react'
 import FileCard from './FileCard'
-import { getDocFiles } from './FileReader'
+import { exportFile, getDocFiles, writeDocFile } from './FileReader'
+const { useState, useEffect } = React
 
 declare interface DemoState {
   loading: boolean
@@ -16,36 +16,49 @@ declare interface DemoState {
 interface IProps {
   [propsName: string]: any
 }
-@withStore(['count', { countAlias: 'count' }])
-export default class Demo extends React.Component<DemoState> {
-  // state 初始化
-  state: DemoState = {
-    loading: false,
+const FileViewer = (): any => {
+  const [loading, setLoading] = useState(false)
+  const [testDocs, setTestDocs] = useState<any[]>([])
+  // 读本地文件
+  const readDoc = (): void => {
+    setLoading(true)
+    const testDocs: any[] = getDocFiles()
+    setTestDocs(testDocs)
+    setLoading(false)
   }
-
-  // 构造函数
-  // constructor(props: IProps) {
-  //   super(props)
-  // }
-
-  componentDidMount(): void {
-    console.log(this)
+  // write file
+  const writeDoc = async (): Promise<any> => {
+    try {
+      const res: any = await writeDocFile()
+      console.log('生成状态：', res)
+      readDoc()
+    } catch (err) {
+      message.error('创建失败')
+    }
   }
-
-  public readDoc(): void {
-    console.log('read...')
-    getDocFiles()
+  const exportDoc = (): void => {
+    console.log('导出')
+    exportFile()
   }
-
-  render(): JSX.Element {
-    const { loading } = this.state
-    return (
-      <div className="layout-padding">
-        <FileCard readDoc={this.readDoc} />
-        <Spin spinning={loading}>
-          <div>file</div>
-        </Spin>
-      </div>
-    )
-  }
-} // class Demo end
+  useEffect(() => {
+    readDoc()
+  }, [])
+  return (
+    <div className="layout-padding">
+      <FileCard readDoc={readDoc} writeDoc={writeDoc} exportDoc={exportDoc} />
+      <Spin spinning={loading}>
+        {/* <div>{renderFiles(testDocs)}</div> */}
+        <List
+          bordered
+          dataSource={testDocs}
+          renderItem={(item: any, index: number) => (
+            <List.Item>
+              {index + 1}.{item}
+            </List.Item>
+          )}
+        />
+      </Spin>
+    </div>
+  )
+}
+export default FileViewer

@@ -18,3 +18,6 @@ declare namespace NodeJS {
 }
 
 declare const nodeRequire: NodeRequire
+
+declare module 'officegen'
+declare module 'docx-pdf'
