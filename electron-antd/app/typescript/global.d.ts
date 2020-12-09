@@ -19,5 +19,9 @@ declare namespace NodeJS {
 
 declare const nodeRequire: NodeRequire
 
-declare module 'officegen'
+declare module 'officegen' // ok
 declare module 'docx-pdf'
+declare module 'libreoffice-convert-win'
+declare module 'docx-pdf'
+declare module 'react-pdf'
+declare module 'pdfjs-dist'

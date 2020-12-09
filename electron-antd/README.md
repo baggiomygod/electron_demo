@@ -21,7 +21,7 @@ npm run dev
 - react-router
 - redux
 - ant-design
-- remixicon
+- remixicon // https://remixicon.com/
 - less
 - typescript
 - eslint

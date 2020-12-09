@@ -1,9 +1,21 @@
 [
   {
+    "key": "CreateBid",
+    "href": "#/new_bid",
+    "title": "新建招标文件",
+    "icon": "home-3"
+  },
+  {
     "key": "Create",
     "href": "#/new",
     "title": "新建",
-    "icon": "home-3"
+    "icon": "add-box"
+  },
+  {
+    "key": "CAPage",
+    "href": "#/ca_page",
+    "title": "CA测试",
+    "icon": "add-box"
   },
   {
     "key": "FilePage",

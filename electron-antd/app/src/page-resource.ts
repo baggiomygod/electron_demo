@@ -6,6 +6,8 @@
 export const Home = undefined
 
 export const Create = import('./views/create/index')
+export const CreateBid = import('./views/create-bid/index')
+export const CAPage = import('./views/ca-page/index')
 export const PageParams = import('./views/create/page-params')
 export const FilePage = import('./views/file-viewer/index')
 export const LogViewer = import('./views/log-viewer/log-viewer')

@@ -1,4 +1,3 @@
-import docxConverter from 'docx-pdf'
 import fs from 'fs'
 import officegen from 'officegen'
 import path from 'path'
@@ -109,17 +108,18 @@ export const writeDocFile = (): Promise<any> => {
   })
 }
 
-export const exportFile = (): void => {
+export const exportFile = async (): Promise<void> => {
   // fs.readFileSync(`${$tools.DOC_PATH}/测试1.doc`)
-  const enterPath = path.join($tools.DOC_PATH, '/测试1.doc')
+
+  const enterPath = path.join($tools.DOC_PATH, '/测试1.docx')
   const outputPath = path.join($tools.DOC_PATH, '/out/测试1.pdf')
-  // Read file
-  // const file = fs.readFileSync(enterPath)
-  docxConverter(enterPath, outputPath, function (err: any, result: any) {
-    if (err) {
-      console.log(err)
-    }
-    console.log('result' + result)
-  })
+  console.log('1:', enterPath)
+  console.log('2:', outputPath)
+  // docxConverter(enterPath, outputPath, (err: any, result: any) => {
+  //   if (err) {
+  //     console.log(err)
+  //   }
+  //   console.log('result' + result)
+  // })
 }
 export default {}
