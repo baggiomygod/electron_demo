@@ -18,10 +18,12 @@ declare namespace NodeJS {
 }
 
 declare const nodeRequire: NodeRequire
+// ok
+declare module 'officegen'
+declare module 'pdfjs-dist'
+declare module 'pdfjs-dist/build/pdf.worker.entry'
 
-declare module 'officegen' // ok
+// unused
 declare module 'docx-pdf'
 declare module 'libreoffice-convert-win'
-declare module 'docx-pdf'
 declare module 'react-pdf'
-declare module 'pdfjs-dist'

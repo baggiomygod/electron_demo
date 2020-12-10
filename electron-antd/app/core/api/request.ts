@@ -1,4 +1,5 @@
 import axios, { AxiosRequestConfig } from 'axios'
+import https from 'https'
 import path from 'path'
 import { errorAction } from './handle-response'
 
@@ -22,6 +23,9 @@ const DEFAULT_CONFIG = {
 // 默认传递的参数
 const DEFAULT_PARAMS = {}
 
+const agent = new https.Agent({
+  rejectUnauthorized: false,
+})
 /**
  * 发起一个请求
  * @param apiPath
@@ -34,12 +38,14 @@ export async function request(
   optionsSource?: RequestOptions
 ): Promise<void> {
   const options: RequestOptions = Object.assign({}, DEFAULT_CONFIG, optionsSource)
+  console.log('request:', options)
   const { method, protocol, host, baseUrl, headers, responseType, checkStatus, formData } = options
   const sendData: AxiosRequestConfig = {
     url: `${protocol}${path.join(host || '', baseUrl || '', apiPath || '')}`,
     method,
     headers,
     responseType,
+    httpsAgent: agent,
   }
 
   const paramsData = Object.assign({}, DEFAULT_PARAMS, params)

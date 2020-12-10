@@ -22,3 +22,26 @@ export function queryTestInfoError(
 ): Promise<any> {
   return $api.request('/demo/demo-test-error', params, options)
 }
+
+/**
+ * 测试签章
+ */
+/**
+ * 测试签章
+ */
+export function callCASign(params?: queryCASignGET.Params): Promise<any> {
+  console.log('callCaSign...')
+  return $api.request('/index.html', params, {
+    method: 'GET',
+    host: 'localhost:7688',
+    protocol: 'https://',
+    baseUrl: '',
+    timeout: 30000,
+    loading: false,
+    errorType: 'notification',
+    checkStatus: true,
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+}

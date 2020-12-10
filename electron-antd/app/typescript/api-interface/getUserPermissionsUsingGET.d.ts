@@ -9,3 +9,11 @@ declare namespace queryTestInfoUsingGET {
     }
   }
 }
+
+declare namespace queryCASignGET {
+  interface Params {
+    file: string
+  }
+
+  interface Response {}
+}
