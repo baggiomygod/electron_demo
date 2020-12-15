@@ -65,6 +65,9 @@ function FileToXml({}: Props): ReactElement {
       const timeStemp = Date.now()
       const res: any = fs.writeFileSync(`${outPath}/write_${timeStemp}.pdf`, buffer, {})
       console.log(222, res)
+      // win 打开文件夹目录
+      const exec = require('child_process').exec
+      exec(`explorer.exe /select,${outPath}`)
     })
   }
   return (
