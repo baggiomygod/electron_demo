@@ -15,7 +15,13 @@
     "key": "CAPage",
     "href": "#/ca_page",
     "title": "CA测试",
-    "icon": "add-box"
+    "icon": "pencil-ruler"
+  },
+  {
+    "key": "FileToXml",
+    "href": "#/to_xml",
+    "title": "转换XML",
+    "icon": "profile"
   },
   {
     "key": "FilePage",

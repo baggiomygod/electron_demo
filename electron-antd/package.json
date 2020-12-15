@@ -31,6 +31,8 @@
     "@types/webpack-dev-server": "^3.11.0",
     "@types/webpack-env": "^1.15.2",
     "@types/webpackbar": "^4.0.0",
+    "@types/xml2js": "^0.4.7",
+    "@types/xmlbuilder": "^11.0.1",
     "@typescript-eslint/eslint-plugin": "^3.7.0",
     "@typescript-eslint/parser": "^3.7.0",
     "antd": "^4.4.3",
@@ -86,16 +88,14 @@
   },
   "homepage": "https://github.com/lanten/electron-antd#readme",
   "dependencies": {
-    "docx-pdf": "^0.0.1",
     "https": "^1.0.0",
-    "jspdf": "^2.2.0",
-    "libreoffice-convert": "^1.3.2",
-    "libreoffice-convert-win": "^1.1.1",
     "officegen": "^0.6.4",
+    "pdf-parse": "^1.1.1",
     "pdf2json": "^1.2.0",
     "pdfjs-dist": "^2.5.207",
-    "react-pdf": "^5.0.0",
     "textract": "^2.5.0",
-    "zapoj-office-to-pdf": "^1.0.1"
+    "xml-to-pdf": "^1.3.3",
+    "xml2js": "^0.4.23",
+    "xmlbuilder": "^15.1.1"
   }
 }

@@ -1,4 +1,7 @@
 [中文说明](./README.zh-cn.md)
+
+> node >= 11.15.0 
+
 ## Quick start
 install
 ```bash

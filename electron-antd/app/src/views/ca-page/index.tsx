@@ -10,11 +10,13 @@ export default class PDFViewer extends React.Component {
   pageRenders: never[]
   pageRenderRef: React.RefObject<any>
   fileUrl: string
+  fullFilePath: string
   constructor(props: any) {
     super(props)
     this.pageRenders = [] // 存放每页pdf形成的canvas
     this.pageRenderRef = React.createRef() // 渲染pdf的容器
     this.fileUrl = path.join(`${$tools.DOC_PATH}`, '/运维管理需求说明.pdf')
+    this.fullFilePath = 'C:/project-temp/examples/electron_demo/electron-antd/assets/docs/运维管理需求说明.pdf'
   }
 
   public componentDidMount() {
@@ -60,10 +62,22 @@ export default class PDFViewer extends React.Component {
   public render() {
     return (
       <div>
-        <div className="btns-wrap">
-          <h3>PDF预览</h3>
+        <div>
+          <h1>PDF 签章 </h1>
+          <div>{this.fullFilePath}</div>
+          <div>
+            <iframe
+              id="pdf-ca-iframe"
+              title="Inline Frame Example"
+              style={{ height: '500px', width: '100%', overflow: 'scroll' }}
+              src={`https://127.0.1:7688/index.html/?file=${this.fullFilePath}`}
+            />
+          </div>
         </div>
-        <div style={{ height: '500px' }} ref={this.pageRenderRef}>
+        <div className="btns-wrap">
+          <h1>PDF预览</h1>
+        </div>
+        <div style={{ height: '500px', width: '100%', overflow: 'scroll' }} ref={this.pageRenderRef}>
           {this.pageRenders.length > 0 && this.pageRenders}
         </div>
       </div>
