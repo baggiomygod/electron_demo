@@ -63,7 +63,7 @@ export default class PDFViewer extends React.Component {
     return (
       <div>
         <div>
-          <h1>PDF 签章 </h1>
+          <h1>PDF 签章(需求先检验天谷客户端服务是否启动) </h1>
           <div>{this.fullFilePath}</div>
           <div>
             <iframe

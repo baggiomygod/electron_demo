@@ -5,7 +5,6 @@ dist
 ca
 release
 build/build-dist
-docs
 # local env files
 .env.local
 .env.*.local

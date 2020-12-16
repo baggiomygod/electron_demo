@@ -24,6 +24,12 @@
     "icon": "profile"
   },
   {
+    "key": "FileEncript",
+    "href": "#/file_encript",
+    "title": "文件加解密",
+    "icon": "lock-password"
+  },
+  {
     "key": "FilePage",
     "href": "#/file",
     "title": "文件操作",
